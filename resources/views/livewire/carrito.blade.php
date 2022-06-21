@@ -21,37 +21,37 @@
             <div class="row mt-3">
                 <div class="col">
                     <h2 class="d-flex justify-content-center mb-3">Realizar Compra</h2>
-                    {{-- <form id="procesar-pago"  method="POST" action="{{route('registros')}}">
-                        @csrf --}}
+                    <form id="procesar-pago"  method="POST" action="{{route('registros')}}">
+                        @csrf
                         <div class="form-group row">
                             <label for="nombre" class="col-12 col-md-2 col-form-label h2">Cliente :</label>
                             <div class="col-12 col-md-10">
-                                <input type="text" class="form-control" wire:model="nombre"
+                                <input type="text" class="form-control" name="nombre"
                                     placeholder="Ingresa nombre cliente" required="">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="email" class="col-12 col-md-2 col-form-label h2">Correo :</label>
                             <div class="col-12 col-md-10">
-                                <input type="email" class="form-control" wire:model="email" placeholder="Ingresa tu Email" required>
+                                <input type="email" class="form-control" name="email" placeholder="Ingresa tu Email" required>
                             </div>
                         </div>
                         <div class="form-group row">
                           <label for="direccion" class="col-12 col-md-2 col-form-label h2">Direccion :</label>
                           <div class="col-12 col-md-10">
-                              <input type="text" class="form-control"wire:model="direccion" placeholder="Ingresa tu direccion" required>
+                              <input type="text" class="form-control" name="direccion" placeholder="Ingresa tu direccion" required>
                           </div>
                       </div>
                       <div class="form-group row">
                           <label for="telefono" class="col-12 col-md-2 col-form-label h2">Telefono :</label>
                           <div class="col-12 col-md-10">
-                              <input type="text" class="form-control" wire:model="telefono" placeholder="Ingresa tu telefono" required>
+                              <input type="text" class="form-control"name="telefono" placeholder="Ingresa tu telefono" required>
                           </div>
                       </div>
                       <div class="form-group row">
                         <label for="date" class="col-12 col-md-2 col-form-label h2">Fecha de Compra:</label>
                         <div class="col-12 col-md-10">
-                            <input type="text" class="form-control" wire:model="date" placeholder="Ingresa la Fecha" required>
+                            <input type="text" class="form-control" name="date" placeholder="Ingresa la Fecha" required>
                         </div>
                     </div>
   
@@ -63,7 +63,7 @@
                                         <th scope="col">Nombre</th>
                                         <th scope="col">Precio</th>
                                         <th scope="col">Sub Total</th>
-                                        <th scope="col">Eliminar</th>
+                                       
                                     </tr>
   
                                 </thead>
@@ -73,7 +73,7 @@
                                 <td>{{$product->image}}</td>
                                 <td>{{$product->producto}}</td>
                                 <td>{{$product->precio}}</td>
-                                <td>600</td>
+                                <td>{{$product->precio}}</td>
                                 
                                 
                                 <tr>
@@ -116,7 +116,7 @@
                             </div>
                            
                         </div>
-                    {{-- </form> --}}
+                    </form>
   
                     {{-- <div class="col-xs-12 col-md-4" type="button">
                         <button class="btn btn-success btn-block">
